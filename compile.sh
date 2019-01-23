@@ -16,7 +16,7 @@ MALLOC_BENCHMARKS="ctl-stack dijkstra huffbench sglib-dllist sglib-hashtable sgl
 #all benchmarks using malloc. Not all are compiling, since we miss stdlib
 #ctl,ctl-string,ctl-stack,dijkstra,dtoa,fasta,huffbench,miniz,qrduino,sglib-dllist,sglib-hashtable,sglib-listinsertsort,sglib-listsort,sglib-rbtree,trio,wikisort
 
-if ! [[ -f bench.inc ]]; then
+if ! [[ -f Makefile ]]; then
 
 # Determine list of compiling benchmarks
 make clean
