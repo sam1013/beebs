@@ -115,10 +115,11 @@ int  mmul(int row_a, int col_a, int row_b, int col_b)
    variables here to avoid their definitions being optimised out.  */
 volatile int data_sink = 0;
 
+//int work[500]; // manual optimization for stack interleaving
 int minver(int row, int col, float eps)
 {
-
 	int work[500], i, j, k, r, iw, s, t, u, v;
+	//int i, j, k, r, iw, s, t, u, v; // manual optimization for stack interleaving
 	float w, wmax, pivot, api, w1;
 
         r = t = w = s = 0;

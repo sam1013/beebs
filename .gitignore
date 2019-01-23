@@ -21,7 +21,14 @@ doc/stamp-vti
 
 # Build / configure outputs
 Makefile
+Makefile.in
+aclocal.m4
+site.exp
+configure
+
 *.o
+*.s
+*.s.orig
 .deps
 config.h
 config.log

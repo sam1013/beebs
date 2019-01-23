@@ -28,11 +28,11 @@
 #include "boardsupport.h"
 #else
 // Default board support is here
-#define BOARD_REPEAT_FACTOR   4096
+#define BOARD_REPEAT_FACTOR   1
 #endif
 
 #ifndef BOARD_REPEAT_FACTOR
-#define BOARD_REPEAT_FACTOR 4096
+#define BOARD_REPEAT_FACTOR 1
 #endif
 
 // If we don't define a default scaling value for the benchmark, define

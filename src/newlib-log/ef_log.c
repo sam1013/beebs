@@ -67,7 +67,8 @@ Lg7 = 1.4798198640e-01; /* 3E178897 */
 
 static const float zero   =  0.0;
 
-	float __ieee754_logf(float x)
+__attribute__ ((noinline)) 
+float __ieee754_logf(float x)
 {
 	float hfsq,f,s,z,R,w,t1,t2,dk;
 	int32_t k,ix,i,j;

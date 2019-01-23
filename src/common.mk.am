@@ -42,7 +42,33 @@ AM_CFLAGS=$(WERROR_CFLAGS) $(WARN_CFLAGS) \
 		  -I $(top_srcdir)/include \
 		  -I $(top_srcdir)/config/@ARCH@/boards/@BOARD@/ \
 		  -I $(top_srcdir)/config/@ARCH@/chips/@CHIP@/ \
+		  -I $(top_srcdir)/../../trustmon/ \
 		  "-DCALIB_SCALE=$(shell $(calib))" \
 		  @CONFIG_CFLAGS@
 
 AM_LDFLAGS= @CONFIG_LDFLAGS@
+
+# Find all program-specific source files
+SISOURCES = $(filter-out %/boardsupport.c %/chipsupport.c %/main.c, $(filter %.c, $(SOURCES)))
+PROGNAME = $(subst -,_,$(notdir $(CURDIR)))
+
+.c.s:
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $($(PROGNAME)_INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $($(PROGNAME)_CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $($(PROGNAME)_CFLAGS) -S -o $@ $<
+	$(AM_V_GEN)cp $@ $@.orig
+	$(AM_V_GEN)awk -v RISCV_XLEN=$(RISCV_XLEN) -v STAG=n -v NTAG=n -v mixed=0 -v SI=$(SI) -v CH=$(CH) -f $(top_srcdir)/../../patch.awk $@.orig > $@
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $($(PROGNAME)_INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $($(PROGNAME)_CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $($(PROGNAME)_CFLAGS) -c -o $(@:.s=.o) $@
+	$(AM_V_GEN)cp $(@:.s=.o) $(PROGNAME)-$(notdir $(@:.s=.o))
+
+# First rebuild program sources with stack interleaving
+# Then rebuild program with SI object files
+si: $(SISOURCES)
+	rm -f $(SISOURCES:.c=.s)
+	make clean
+	make SI=1 CH=0 $(SISOURCES:.c=.s)
+	make
+
+ch: $(SISOURCES)
+	rm -f $(SISOURCES:.c=.s)
+	make clean
+	make SI=0 CH=1 $(SISOURCES:.c=.s)
+	make

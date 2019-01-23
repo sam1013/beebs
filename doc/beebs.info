@@ -1,4 +1,4 @@
-This is beebs.info, produced by makeinfo version 6.0 from beebs.texi.
+This is beebs.info, produced by makeinfo version 6.1 from beebs.texi.
 
 This file documents the Bristol/Embecosm Embedded Benchmark Suite,
 BEEBS.
@@ -789,42 +789,42 @@ Index
  [index ]
 * Menu:
 
-* '--with-board':                        Configuring the Build.
+* --with-board:                          Configuring the Build.
                                                                (line 19)
-* '--with-chip':                         Configuring the Build.
+* --with-chip:                           Configuring the Build.
                                                                (line 22)
 * Adding a new benchmark:                Adding a New Benchmark to BEEBS.
                                                                (line  6)
 * Adding a new board:                    Adding a New Board to BEEBS.
                                                                (line  6)
-* 'arch.cfg':                            Configuration files.  (line  6)
+* arch.cfg:                              Configuration files.  (line  6)
 * Benchmark structure:                   Benchmark structure.  (line  6)
 * board specific code:                   Board specific code.  (line  6)
-* 'board.cfg':                           Configuration files.  (line  6)
-* 'boardsupport.c':                      Board specific code.  (line  6)
-* 'boardsupport.h':                      Header files.         (line  6)
-* 'BOARD_CFLAGS':                        Configuration files.  (line 17)
-* 'BOARD_CFLAGS' <1>:                    Configuration files.  (line 23)
-* 'BOARD_REPEAT_FACTOR':                 Header files.         (line 16)
+* board.cfg:                             Configuration files.  (line  6)
+* boardsupport.c:                        Board specific code.  (line  6)
+* boardsupport.h:                        Header files.         (line  6)
+* BOARD_CFLAGS:                          Configuration files.  (line 17)
+* BOARD_CFLAGS <1>:                      Configuration files.  (line 23)
+* BOARD_REPEAT_FACTOR:                   Header files.         (line 16)
 * bugs:                                  Known Issues.         (line  6)
 * building BEEBS:                        Building.             (line  6)
 * Calibration:                           Calibration.          (line  6)
-* 'calibration':                         Calibration.          (line  6)
-* 'chip.cfg':                            Configuration files.  (line  6)
-* 'chipsupport.h':                       Header files.         (line  6)
-* 'CHIP_CFLAGS':                         Configuration files.  (line 20)
+* calibration:                           Calibration.          (line  6)
+* chip.cfg:                              Configuration files.  (line  6)
+* chipsupport.h:                         Header files.         (line  6)
+* CHIP_CFLAGS:                           Configuration files.  (line 20)
 * configuration files:                   Configuration files.  (line  6)
 * configuring BEEBS:                     Configuring the Build.
                                                                (line  6)
 * header files:                          Header files.         (line  6)
-* 'initialize_board':                    Board specific code.  (line 11)
+* initialize_board:                      Board specific code.  (line 11)
 * known issues:                          Known Issues.         (line  6)
 * license for beebs:                     GNU Free Documentation License.
                                                                (line  6)
 * problems:                              Known Issues.         (line  6)
 * Running BEEBS:                         Running.              (line  6)
-* 'start_trigger':                       Board specific code.  (line 15)
-* 'stop_trigger':                        Board specific code.  (line 19)
+* start_trigger:                         Board specific code.  (line 15)
+* stop_trigger:                          Board specific code.  (line 19)
 * where to add files:                    Where to add files.   (line  6)
 
 

@@ -1078,7 +1078,9 @@ benchmark(void)
 
 #else
 
-  foo(400);
+  volatile int x;
+  x = foo(400);
+  (void)x;
 
 #endif
 

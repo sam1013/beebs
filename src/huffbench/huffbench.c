@@ -166,11 +166,11 @@ void compdecomp(byte * data, size_t data_len)
     byte   clen[256];   // bit lengths of codes
 
     memset(comp,0,sizeof(byte)   * (data_len + 1));
-    memset(freq,0,sizeof(size_t) * 512);
-    memset(heap,0,sizeof(size_t) * 256);
-    memset(link,0,sizeof(int)    * 512);
-    memset(code,0,sizeof(bits32) * 256);
-    memset(clen,0,sizeof(byte)   * 256);
+    memset(freq,0,sizeof(size_t) * 512); // comment out for manually optimized stack interleaving
+    memset(heap,0,sizeof(size_t) * 256); // comment out for manually optimized stack interleaving
+    memset(link,0,sizeof(int)    * 512); // comment out for manually optimized stack interleaving
+    memset(code,0,sizeof(bits32) * 256); // comment out for manually optimized stack interleaving
+    memset(clen,0,sizeof(byte)   * 256); // comment out for manually optimized stack interleaving
 
     // count frequencies
     for (i = 0; i < data_len; ++i)
