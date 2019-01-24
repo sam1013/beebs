@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ../../../config.common
+source ../../config.common
 
 # To record instruction histograms when executing benchmarks, set -DTM_BENCH=1.
 # This will terminate benchmark program immediately when executing stop_trigger without
